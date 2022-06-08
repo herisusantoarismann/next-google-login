@@ -9,7 +9,12 @@ import {
   Divider,
   Menu,
 } from "antd";
-import { GoogleOutlined, CheckOutlined, MenuOutlined } from "@ant-design/icons";
+import {
+  GoogleOutlined,
+  MenuOutlined,
+  TwitterOutlined,
+  FacebookFilled,
+} from "@ant-design/icons";
 import { GoogleLogin } from "react-google-login";
 
 const Home = (props) => {
@@ -36,7 +41,18 @@ const Home = (props) => {
             src="https://cdn-icons-png.flaticon.com/512/902/902691.png"
             style={{ maxWidth: "25px" }}
           />
-          <MenuOutlined />
+          <MenuOutlined onClick={showDrawer} />
+          <Drawer
+            title="Basic Drawer"
+            placement="right"
+            onClose={onClose}
+            visible={visible}
+            width={"100%"}
+          >
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+          </Drawer>
         </Space>
       </Menu>
       <Space
@@ -89,7 +105,7 @@ const Home = (props) => {
         <Divider plain>OR</Divider>
         <Space direction="vertical">
           <GoogleLogin
-            clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
+            clientId="754838923196-k66cr858a0ish511u74p8a58nv251gj3.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
                 <GoogleOutlined />
@@ -105,8 +121,8 @@ const Home = (props) => {
             clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
-                <GoogleOutlined />
-                Continue with Google
+                <FacebookFilled />
+                Continue with Facebook
               </Button>
             )}
             buttonText="Login"
@@ -118,8 +134,8 @@ const Home = (props) => {
             clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
-                <GoogleOutlined />
-                Continue with Google
+                <TwitterOutlined />
+                Continue with Twitter
               </Button>
             )}
             buttonText="Login"
