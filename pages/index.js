@@ -15,7 +15,7 @@ import {
   TwitterOutlined,
   FacebookFilled,
 } from "@ant-design/icons";
-import { GoogleLogin } from "react-google-login";
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
@@ -29,9 +29,9 @@ const Home = () => {
     setVisible(false);
   };
 
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  });
 
   return (
     <>
@@ -108,19 +108,10 @@ const Home = () => {
         </Space>
         <Divider plain>OR</Divider>
         <Space direction="vertical">
-          <GoogleLogin
-            clientId="754838923196-k66cr858a0ish511u74p8a58nv251gj3.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
-                <GoogleOutlined />
-                Continue with Google
-              </Button>
-            )}
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
+          <Button onClick={() => login()} style={{ width: "90vw" }}>
+            <GoogleOutlined />
+            Continue with Google
+          </Button>
           {/* <GoogleLogin
             clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
             render={(renderProps) => (
