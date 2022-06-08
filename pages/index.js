@@ -17,7 +17,7 @@ import {
 } from "@ant-design/icons";
 import { GoogleLogin } from "react-google-login";
 
-const Home = (props) => {
+const Home = () => {
   const [visible, setVisible] = useState(false);
   const { Text } = Typography;
 
@@ -65,6 +65,10 @@ const Home = (props) => {
         }}
         size={"small"}
       >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1239/1239719.png"
+          style={{ maxWidth: "50px" }}
+        />
         <Text style={{ fontSize: "1.1em", fontWeight: "700" }}>
           Create your account
         </Text>
@@ -117,7 +121,7 @@ const Home = (props) => {
             onFailure={responseGoogle}
             cookiePolicy={"single_host_origin"}
           />
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
@@ -131,7 +135,7 @@ const Home = (props) => {
             cookiePolicy={"single_host_origin"}
           />
           <GoogleLogin
-            clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
+            clientId="1053448259398-hn6a5jr3jocrv9gil6s3r989h9a0r2i5.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
                 <TwitterOutlined />
@@ -142,7 +146,7 @@ const Home = (props) => {
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
             cookiePolicy={"single_host_origin"}
-          />
+          /> */}
         </Space>
         <Space>
           <Text style={{ textAlign: "center" }}>
@@ -157,6 +161,7 @@ const Home = (props) => {
           justifyContent: "center",
           fontSize: "0.8em",
           color: "#5F6061",
+          marginTop: "30px",
         }}
       >
         <Text>
