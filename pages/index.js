@@ -25,6 +25,8 @@ import TwitterLogin from "react-twitter-login";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [profile, setProfile] = useState({});
   const { Text } = Typography;
 
   const showDrawer = () => {
@@ -43,8 +45,11 @@ const Home = () => {
       },
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
+
+  const setLogin = () => {};
 
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
