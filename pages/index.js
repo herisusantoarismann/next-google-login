@@ -132,13 +132,13 @@ const Home = () => {
               }}
             >
               <Row justify="center">
-                <Col xs={22} sm={10}>
+                <Col xs={22} sm={10} xl={6}>
                   <Input placeholder="Enter your email" />
                 </Col>
               </Row>
             </Form.Item>
             <Row justify="center">
-              <Col xs={22} sm={10}>
+              <Col xs={22} sm={10} xl={6}>
                 <Button
                   htmlType="submit"
                   type="primary"
@@ -158,7 +158,7 @@ const Home = () => {
         <Divider plain>OR</Divider>
         <Space direction="vertical" style={{ width: "100vw" }}>
           <Row justify="center">
-            <Col xs={22} sm={10}>
+            <Col xs={22} sm={10} xl={6}>
               <Button onClick={() => login()} block>
                 <GoogleOutlined />
                 Continue with Google
