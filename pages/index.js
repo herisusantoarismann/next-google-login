@@ -45,17 +45,23 @@ const Home = () => {
       },
     })
       .then((res) => res.json())
-      .then((res) => setLogin(res))
+      .then((res) => setGoogleLogin(res))
       .catch((err) => console.log(err));
   };
 
-  const setLogin = (user) => {
+  const setGoogleLogin = (user) => {
     setIsLogin(true);
     setProfile({
       name: user.name,
       email: user.email,
       picture: user.picture,
     });
+    setVisible(true);
+  };
+
+  const setGoogleLogout = () => {
+    setIsLogin(false);
+    setProfile({});
   };
 
   const login = useGoogleLogin({
@@ -111,6 +117,17 @@ const Home = () => {
                 <Row justify="center">
                   <Col>
                     <Text>{profile.email}</Text>
+                  </Col>
+                </Row>
+                <Row justify="center">
+                  <Col>
+                    <Button
+                      type="primary"
+                      danger
+                      onClick={() => setGoogleLogout()}
+                    >
+                      Logout
+                    </Button>
                   </Col>
                 </Row>
               </>
