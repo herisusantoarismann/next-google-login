@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Drawer,
@@ -8,6 +8,9 @@ import {
   Space,
   Divider,
   Menu,
+  Grid,
+  Row,
+  Col,
 } from "antd";
 import {
   GoogleOutlined,
@@ -19,7 +22,18 @@ import { useGoogleLogin } from "@react-oauth/google";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
+  const [width, setWidth] = useState("xs");
   const { Text } = Typography;
+  const { useBreakpoint } = Grid;
+
+  const style = {
+    xs: {
+      button: "90vw",
+    },
+    md: {
+      button: "24rem",
+    },
+  };
 
   const showDrawer = () => {
     setVisible(true);
@@ -32,6 +46,21 @@ const Home = () => {
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => console.log(tokenResponse),
   });
+
+  // const screens = useBreakpoint();
+  // let sc = function functionOne() {
+  //   return new Promise((resolve, reject) => {
+  //     let value = Object.entries(screens)
+  //       .filter((item) => item[1])
+  //       .slice(-1)[0];
+  //     if (value) {
+  //       resolve(value);
+  //     } else {
+  //       reject("Rejected");
+  //     }
+  //   });
+  // };
+  // sc().then((w) => setWidth(w[0]));
 
   return (
     <>
@@ -47,7 +76,7 @@ const Home = () => {
             placement="right"
             onClose={onClose}
             visible={visible}
-            width={"100%"}
+            width={"50%"}
           >
             <p>Some contents...</p>
             <p>Some contents...</p>
@@ -77,8 +106,19 @@ const Home = () => {
         >
           Please Enter your details.
         </Text>
-        <Space direction="vertical" style={{ marginTop: "50px" }}>
-          <Form>
+        <Space
+          direction="vertical"
+          style={{
+            marginTop: "50px",
+            width: "100vw",
+          }}
+        >
+          <Form
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Form.Item
               name="email"
               rules={[
@@ -88,30 +128,44 @@ const Home = () => {
                   message: "Email is required!",
                 },
               ]}
-              style={{ marginBottom: "10px" }}
-            >
-              <Input placeholder="Enter your email" style={{ width: "90vw" }} />
-            </Form.Item>
-            <Button
-              htmlType="submit"
-              type="primary"
               style={{
-                width: "90vw",
-                backgroundColor: "#0D0D0D",
-                color: "#B3B3B3",
-                borderRadius: "5px",
+                marginBottom: "10px",
               }}
             >
-              Submit
-            </Button>
+              <Row justify="center">
+                <Col xs={22} sm={10}>
+                  <Input placeholder="Enter your email" />
+                </Col>
+              </Row>
+            </Form.Item>
+            <Row justify="center">
+              <Col xs={22} sm={10}>
+                <Button
+                  htmlType="submit"
+                  type="primary"
+                  style={{
+                    backgroundColor: "#0D0D0D",
+                    color: "#B3B3B3",
+                    borderRadius: "5px",
+                  }}
+                  block
+                >
+                  Submit
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </Space>
         <Divider plain>OR</Divider>
-        <Space direction="vertical">
-          <Button onClick={() => login()} style={{ width: "90vw" }}>
-            <GoogleOutlined />
-            Continue with Google
-          </Button>
+        <Space direction="vertical" style={{ width: "100vw" }}>
+          <Row justify="center">
+            <Col xs={22} sm={10}>
+              <Button onClick={() => login()} block>
+                <GoogleOutlined />
+                Continue with Google
+              </Button>
+            </Col>
+          </Row>
           {/* <GoogleLogin
             clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
             render={(renderProps) => (
