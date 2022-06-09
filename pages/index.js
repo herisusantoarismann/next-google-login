@@ -87,7 +87,6 @@ const Home = () => {
       <Space
         direction="vertical"
         style={{
-          height: "100vh",
           width: "100vw",
           alignItems: "center",
           justifyContent: "center",
@@ -96,7 +95,7 @@ const Home = () => {
       >
         <img
           src="https://cdn-icons-png.flaticon.com/512/1239/1239719.png"
-          style={{ maxWidth: "50px" }}
+          style={{ maxWidth: "50px", paddingTop: "50px" }}
         />
         <Text style={{ fontSize: "1.1em", fontWeight: "700" }}>
           Create your account
@@ -109,7 +108,7 @@ const Home = () => {
         <Space
           direction="vertical"
           style={{
-            marginTop: "50px",
+            paddingTop: "50px",
             width: "100vw",
           }}
         >
@@ -201,12 +200,14 @@ const Home = () => {
       </Space>
       <Space
         style={{
+          position: "absolute",
+          left: "0",
+          bottom: "0",
           width: "100vw",
-          padding: "10px",
+          padding: "30px 10px",
           justifyContent: "center",
           fontSize: "0.8em",
           color: "#5F6061",
-          marginTop: "30px",
         }}
       >
         <Text>
