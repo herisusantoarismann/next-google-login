@@ -35,8 +35,21 @@ const Home = () => {
     setVisible(false);
   };
 
+  const getGoogleData = (token) => {
+    fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
+
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
+    onSuccess: (tokenResponse) => {
+      getGoogleData(tokenResponse.access_token);
+    },
   });
 
   const responseFacebook = (response) => {
@@ -152,12 +165,12 @@ const Home = () => {
           </Row>
           <Row justify="center">
             <Col xs={22} sm={10} xl={6}>
-              <FacebookLogin
+              {/* <FacebookLogin
                 appId="1088597931155576"
                 autoLoad={true}
                 fields="name,email,picture"
                 callback={responseFacebook}
-              />
+              /> */}
               {/* <FacebookLogin
                 appId="744677026984520"
                 autoLoad
@@ -173,11 +186,11 @@ const Home = () => {
           </Row>
           <Row justify="center">
             <Col xs={22} sm={10} xl={6}>
-              <TwitterLogin
+              {/* <TwitterLogin
                 authCallback={authHandler}
                 consumerKey={CONSUMER_KEY}
                 consumerSecret={CONSUMER_SECRET}
-              />
+              /> */}
             </Col>
           </Row>
         </Space>
