@@ -19,21 +19,11 @@ import {
   FacebookFilled,
 } from "@ant-design/icons";
 import { useGoogleLogin } from "@react-oauth/google";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
-  const [width, setWidth] = useState("xs");
   const { Text } = Typography;
-  const { useBreakpoint } = Grid;
-
-  const style = {
-    xs: {
-      button: "90vw",
-    },
-    md: {
-      button: "24rem",
-    },
-  };
 
   const showDrawer = () => {
     setVisible(true);
@@ -47,20 +37,9 @@ const Home = () => {
     onSuccess: (tokenResponse) => console.log(tokenResponse),
   });
 
-  // const screens = useBreakpoint();
-  // let sc = function functionOne() {
-  //   return new Promise((resolve, reject) => {
-  //     let value = Object.entries(screens)
-  //       .filter((item) => item[1])
-  //       .slice(-1)[0];
-  //     if (value) {
-  //       resolve(value);
-  //     } else {
-  //       reject("Rejected");
-  //     }
-  //   });
-  // };
-  // sc().then((w) => setWidth(w[0]));
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
 
   return (
     <>
@@ -165,32 +144,22 @@ const Home = () => {
               </Button>
             </Col>
           </Row>
-          {/* <GoogleLogin
-            clientId="754838923196-fd6oi74bc9086jdss6p7h7tts8vefr0l.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
-                <FacebookFilled />
-                Continue with Facebook
-              </Button>
-            )}
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
-          <GoogleLogin
-            clientId="1053448259398-hn6a5jr3jocrv9gil6s3r989h9a0r2i5.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <Button onClick={renderProps.onClick} style={{ width: "90vw" }}>
-                <TwitterOutlined />
-                Continue with Twitter
-              </Button>
-            )}
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          /> */}
+          <Row justify="center">
+            <Col xs={22} sm={10} xl={6}>
+              <FacebookLogin
+                appId="744677026984520"
+                autoLoad
+                onClick={responseFacebook}
+                callback={responseFacebook}
+                render={(renderProps) => (
+                  <Button onClick={() => renderProps.onClick} block>
+                    <FacebookFilled />
+                    Continue with Facebook
+                  </Button>
+                )}
+              />
+            </Col>
+          </Row>
         </Space>
         <Space>
           <Text style={{ textAlign: "center" }}>
