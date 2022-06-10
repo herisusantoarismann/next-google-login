@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Drawer,
@@ -12,12 +12,7 @@ import {
   Col,
   Image,
 } from "antd";
-import {
-  GoogleOutlined,
-  MenuOutlined,
-  TwitterOutlined,
-  FacebookFilled,
-} from "@ant-design/icons";
+import { GoogleOutlined, MenuOutlined } from "@ant-design/icons";
 import { useGoogleLogin } from "@react-oauth/google";
 
 const Home = () => {
@@ -206,6 +201,12 @@ const Home = () => {
                 Continue with Google
               </Button>
             </Col>
+          </Row>
+          <Row justify="center">
+            <Col xs={22} sm={10} xl={6}></Col>
+          </Row>
+          <Row justify="center">
+            <Col xs={22} sm={10} xl={6}></Col>
           </Row>
         </Space>
         <Space>
