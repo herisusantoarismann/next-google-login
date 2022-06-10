@@ -34,13 +34,11 @@
 
 ![Google Login](https://github.com/herisusantoarismann/next-google-login/blob/master/Screenshot.png)
 
-Here is a screenshot of the application. Consists of a list of letters, a list of verses and a list of priests along with their voices for each verse.
+This is a screenshot of the application. Contains an example of login with google using nextjs.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 - [NextJS](https://nextjs.org/)
 - [Ant Design](https://ant.design/)
