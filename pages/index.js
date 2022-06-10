@@ -19,9 +19,6 @@ import {
   FacebookFilled,
 } from "@ant-design/icons";
 import { useGoogleLogin } from "@react-oauth/google";
-// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import FacebookLogin from "react-facebook-login";
-import TwitterLogin from "react-twitter-login";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
@@ -69,14 +66,6 @@ const Home = () => {
       getGoogleData(tokenResponse.access_token);
     },
   });
-
-  const responseFacebook = (response) => {
-    console.log(response);
-  };
-
-  const authHandler = (err, data) => {
-    console.log(err, data);
-  };
 
   return (
     <>
@@ -220,32 +209,12 @@ const Home = () => {
           </Row>
           <Row justify="center">
             <Col xs={22} sm={10} xl={6}>
-              {/* <FacebookLogin
-                appId="1088597931155576"
-                autoLoad={true}
-                fields="name,email,picture"
-                callback={responseFacebook}
-              /> */}
-              {/* <FacebookLogin
-                appId="744677026984520"
-                autoLoad
-                fields="name,email,picture"
-                render={() => (
-                  <Button onClick={() => responseFacebook()} block>
-                    <FacebookFilled />
-                    Continue with Facebook
-                  </Button>
-                )}
-              /> */}
+              
             </Col>
           </Row>
           <Row justify="center">
             <Col xs={22} sm={10} xl={6}>
-              {/* <TwitterLogin
-                authCallback={authHandler}
-                consumerKey={CONSUMER_KEY}
-                consumerSecret={CONSUMER_SECRET}
-              /> */}
+             
             </Col>
           </Row>
         </Space>
