@@ -125,6 +125,7 @@ const Home = () => {
         direction="vertical"
         style={{
           width: "100vw",
+          minHeight: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -217,9 +218,6 @@ const Home = () => {
       </Space>
       <Space
         style={{
-          position: "absolute",
-          left: "0",
-          bottom: "0",
           width: "100vw",
           padding: "30px 10px",
           justifyContent: "center",
