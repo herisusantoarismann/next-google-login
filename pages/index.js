@@ -207,16 +207,6 @@ const Home = () => {
               </Button>
             </Col>
           </Row>
-          <Row justify="center">
-            <Col xs={22} sm={10} xl={6}>
-              
-            </Col>
-          </Row>
-          <Row justify="center">
-            <Col xs={22} sm={10} xl={6}>
-             
-            </Col>
-          </Row>
         </Space>
         <Space>
           <Text style={{ textAlign: "center" }}>
