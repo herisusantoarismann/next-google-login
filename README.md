@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="public/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn-icons-png.flaticon.com/512/1239/1239719.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Google Login</h3>
@@ -32,7 +32,7 @@
 
 ## About The Project
 
-![Google Login](https://github.com/herisusantoarismann/quran-app/blob/master/Screenshot.png)
+![Google Login](https://github.com/herisusantoarismann/next-google-login/blob/master/Screenshot.png)
 
 Here is a screenshot of the application. Consists of a list of letters, a list of verses and a list of priests along with their voices for each verse.
 
@@ -65,7 +65,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/herisusantoarismann/quran-app
+   git clone https://github.com/herisusantoarismann/next-google-login
    ```
 2. Install NPM packages
    ```sh
